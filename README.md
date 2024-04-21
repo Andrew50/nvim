@@ -1,8 +1,11 @@
 //nvim version 0.9.5
-sudo apt update
-sudo apt install curl
-curl -LO https://github.com/neovim/neovim/releases/download/v0.9.5/nvim-linux64.tar.gz
-tar xzvf nvim-linux64.tar.gz
-sudo mv nvim-linux64/bin/nvim /usr/local/bin/
-rm nvim-linux64.tar.gz
-rm -r nvim-linux64
+sudo apt-get update
+sudo apt-get install ninja-build gettext libtool libtool-bin autoconf automake cmake g++ pkg-config unzip curl doxygen
+git clone https://github.com/neovim/neovim
+cd neovim
+git checkout v0.9.5
+make CMAKE_BUILD_TYPE=Release
+sudo make install
+mdkir ~/.config/nvim
+cd ~/.config/nvim
+git clone https://github.com/Andrew50/nvim.git .
