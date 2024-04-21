@@ -12,3 +12,5 @@ git clone https://github.com/Andrew50/nvim.git .
 mkdir -p ~/.local/share/nvim/site/pack/packer/start
 git clone --depth 1 https://github.com/wbthomason/packer.nvim \
 ~/.local/share/nvim/site/pack/packer/start/packer.nvim
+launch nvim
+:PackerSync
