@@ -57,4 +57,5 @@ use {
 }
 
   use ('github/copilot.vim')
+--  use ('ojroques/vim-oscyank')
 end)
