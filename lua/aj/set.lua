@@ -7,7 +7,15 @@ vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
 
 vim.opt.smartindent = true
-vim.opt.wrap = false
+--vim.opt.wrap = false
+function ToggleWrap()
+    if vim.wo.wrap then
+        vim.wo.wrap = false
+    else
+        vim.wo.wrap = true
+    end
+end
+vim.api.nvim_set_keymap('n', '<leader>w', ':lua ToggleWrap()<CR>', {noremap = true, silent = true})
 vim.opt.hlsearch = false
 vim.opt.incsearch = true
 
