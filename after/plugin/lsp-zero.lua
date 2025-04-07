@@ -7,13 +7,18 @@
   require('mason').setup({})
   require('mason-lspconfig').setup({
     ensure_installed = {
-      'pyright', 'svelte', 'tsserver', 'html', 'cssls',
+      'pyright', 'svelte', 
+      'tsserver', 
+     --'ts_ls',
+     'eslint',
+      'html', 'cssls',
       'dockerls', 'yamlls', 'gopls', 'rust_analyzer',
     },
     handlers = {
       lsp_zero.default_setup,
     },
   })
+  require('lspconfig').ts_ls.setup({})
   vim.diagnostic.config({
     virtual_text = true;
     float = {

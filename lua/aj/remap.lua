@@ -8,3 +8,4 @@ vim.keymap.set("n", "}", "}zz", { noremap=true, silent=true })
 vim.api.nvim_set_keymap('n', '<leader>y', '"+y', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('v', '<leader>y', '"+y', { noremap = true, silent = true })
 
+vim.g.ftplugin_sql_omni_key = '<C-j>'

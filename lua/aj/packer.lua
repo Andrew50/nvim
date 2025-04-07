@@ -1,4 +1,3 @@
-
 -- Only required if you have packer configured as `opt`
 vim.cmd [[packadd packer.nvim]]
 
@@ -6,7 +5,6 @@ return require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
   use {
 	  'nvim-telescope/telescope.nvim', tag = '0.1.5',
-	  -- or                            , branch = '0.1.x',
 	  requires = { {'nvim-lua/plenary.nvim'} }
   }
   use({
@@ -21,16 +19,32 @@ return require('packer').startup(function(use)
   use('theprimeagen/harpoon')
   use('mbbill/undotree')
   use('tpope/vim-fugitive')
-use {
-    'VonHeikemen/lsp-zero.nvim',
-    branch = 'v3.x',
+  use {
+      'VonHeikemen/lsp-zero.nvim',
+      branch = 'v3.x',
+      requires = {
+          {'neovim/nvim-lspconfig'},
+          {'hrsh7th/nvim-cmp'},
+          {'hrsh7th/cmp-nvim-lsp'},
+          {'L3MON4D3/LuaSnip'},
+          {'williamboman/mason.nvim'},
+          {'williamboman/mason-lspconfig.nvim'},
+      }
+  }
+  use 'ellisonleao/dotenv.nvim'
+  
+  -- Required dependencies for avante.nvim
+  use 'stevearc/dressing.nvim'
+  use 'MunifTanjim/nui.nvim'
+  use 'MeanderingProgrammer/render-markdown.nvim'
+  
+  -- Avante.nvim
+  use {
+    'yetone/avante.nvim',
+    branch = 'main',
+    run = 'make',
     requires = {
-        {'neovim/nvim-lspconfig'},
-        {'hrsh7th/nvim-cmp'},
-        {'hrsh7th/cmp-nvim-lsp'},
-        {'L3MON4D3/LuaSnip'}, -- Snippet engine and snippets collection
-        {'williamboman/mason.nvim'},
-        {'williamboman/mason-lspconfig.nvim'},
+      'nvim-lua/plenary.nvim',
     }
-}
+  }
 end)
