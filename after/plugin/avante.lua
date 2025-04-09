@@ -1,9 +1,6 @@
--- Note: avante.nvim requires Neovim 0.10.1+
-
-
-require('avante').setup({
-  provider = "gemini",  -- String, not a table
-  gemini = {  -- Separate configuration table for gemini
+require('avante').setup({ 
+  provider = "gemini",  
+  gemini = {  
     model = "gemini-2.5-pro-exp-03-25",
     temperature = 0,
     max_tokens = 4096,
@@ -17,9 +14,7 @@ require('avante').setup({
   },
 })
 
--- Key mappings for avante
 vim.keymap.set("v", "<leader>ai", ":AvantePrompt<CR>", { noremap = true, silent = true })
 vim.keymap.set("n", "<leader>ac", ":AvanteChat<CR>", { noremap = true, silent = true })
 
--- Set recommended option
 vim.opt.laststatus = 3 

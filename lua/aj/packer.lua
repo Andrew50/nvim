@@ -36,8 +36,16 @@ return require('packer').startup(function(use)
   -- Required dependencies for avante.nvim
   use 'stevearc/dressing.nvim'
   use 'MunifTanjim/nui.nvim'
-  use 'MeanderingProgrammer/render-markdown.nvim'
-  
+  --use {
+  --  'MeanderingProgrammer/render-markdown.nvim',
+  --  requires = { 'nvim-treesitter/nvim-treesitter' }, -- Treesitter is a dependency
+  --  config = function()
+  --    require('render-markdown').setup({
+  --      file_types = { 'markdown', 'Avante' },
+  --    })
+  --  end,
+  --}
+
   -- Avante.nvim
   use {
     'yetone/avante.nvim',
@@ -46,5 +54,38 @@ return require('packer').startup(function(use)
     requires = {
       'nvim-lua/plenary.nvim',
     }
+  }
+  use {
+    'nvim-tree/nvim-web-devicons',
+    config = function()
+      require('nvim-web-devicons').setup {
+       -- your personnal icons can go here (optional)
+       -- override = {
+       --  vim = {
+       --    icon = "",
+       --    color = "#019833",
+       --    name = "Vim"
+       --  }
+       -- },
+       -- globally enable default icons (default to true)
+       -- will get overriden by `get_icons` option
+       default = true;
+     }
+    end
+  }
+  
+  -- Markdown viewer
+  use {
+    'OXY2DEV/markview.nvim',
+    branch = 'main',
+    config = function()
+      require('markview').setup({
+        preview = {
+          filetypes = { "markdown", "Avante" },
+          ignore_buftypes = {},
+        },
+        max_length = 99999,
+      })
+    end
   }
 end)
