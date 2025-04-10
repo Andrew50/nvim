@@ -46,6 +46,9 @@ require('avante').setup({
 vim.keymap.set("n", "<C-m>", ":AvanteModels<CR>", { noremap = true, silent = true, desc = "Change Model"})
 vim.keymap.set("n", "<C-n>", ":AvanteClear<CR>", { noremap = true, silent = true, desc = "Clear Chat"})
 
+vim.keymap.set("n", "<leader>pa",":AvanteFocus<CR>",{ noremap = true, silent = true, desc = "Focus Avante"})
+
+--[[
 -- Context-aware <leader>pa command
 vim.keymap.set("n", "<leader>pa", function()
     -- Check if the current buffer is an Avante buffer
@@ -60,4 +63,5 @@ vim.keymap.set("n", "<leader>pa", function()
     end
 end, { noremap = true, silent = false, desc = "Toggle/Focus Avante Sidebar" })
 
+]]
 vim.opt.laststatus = 3
