@@ -23,7 +23,11 @@ require('avante').setup({
       border = "rounded",
       width = 60,
       height = 10,
+      prefix = "",
       start_insert = false,
+    },
+    sidebar = {
+        start_insert = false,
     },
     output = {
       border = "rounded",
@@ -72,6 +76,11 @@ vim.keymap.set("n", "<leader>pa", function()
     vim.cmd("AvanteChat")
   end
 end, { noremap = true, silent = true, desc = "Toggle Avante Chat" })
+
+-- <leader>am to open Avante model picker (rebinding from <leader>a?)
+vim.keymap.set("n", "<leader>am", function()
+  vim.cmd("AvanteModels")
+end, { noremap = true, silent = true, desc = "Open Avante Model Picker" })
 
 
 vim.opt.laststatus = 3
