@@ -16,7 +16,7 @@ require('avante').setup({
     auto_set_keymaps = true,
     auto_apply_diff_after_generation = true,
     support_paste_from_clipboard = true,
-    highlight_input_on_submit = true,
+    --highlight_input_on_submit = true,
   },
   windows = {
     input = {
@@ -50,7 +50,7 @@ require('avante').setup({
 -- <leader>ac to ensure the sidebar is open, but won't close it if it's already open
 
 -- <leader>at to toggle between Avante window and main window
-vim.keymap.set("n", "<leader>at", function()
+vim.keymap.set("n", "<leader>pa", function()
   -- Check if there's an Avante window open
   local avante_win = nil
   for _, win in ipairs(vim.api.nvim_list_wins()) do
