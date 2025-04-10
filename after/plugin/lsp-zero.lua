@@ -13,6 +13,7 @@
      'eslint',
       'html', 'cssls',
       'dockerls', 'yamlls', 'gopls', 'rust_analyzer',
+      'bashls',
     },
     handlers = {
       lsp_zero.default_setup,
