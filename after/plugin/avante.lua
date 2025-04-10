@@ -56,7 +56,23 @@ require('avante').setup({
 -- <leader>at to toggle between Avante window and main window
 vim.keymap.set("n", "<C-m>", ":AvanteModels<CR>", { noremap = true, silent = true, desc = "Change Model"})
 vim.keymap.set("n", "<C-n>", ":AvanteClear<CR>", { noremap = true, silent = true, desc = "Clear Chat"})
-vim.keymap.set("n", "<leader>pa", ":AvanteToggle<CR>", { noremap = true, silent = true, desc = "Toggle Avante Sidebar"})
+
+-- Context-aware <leader>pa command
+vim.keymap.set("n", "<leader>pa", function()
+    -- Check if the current buffer is an Avante buffer
+    local current_buf = vim.api.nvim_get_current_buf()
+    local buf_name = vim.api.nvim_buf_get_name(current_buf)
+    local buf_type = vim.bo[current_buf].filetype
+
+    --buf type is AvanteInput
+    
+    -- Check if we're in an Avante buffer by filetype
+    if buf_type ~= "AvanteInput" then-- and an avante input is open
+        vim.cmd("AvanteFocus")
+    else
+        vim.cmd("AvanteToggle")
+    end
+end, { noremap = true, silent = false, desc = "Toggle/Focus Avante Sidebar" })
 --[[vim.keymap.set("n", "<leader>pa", function()
   -- Check if there's an Avante window open
   local avante_win = nil
