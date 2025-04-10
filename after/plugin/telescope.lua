@@ -31,30 +31,7 @@ require('telescope').setup {
         }
         -- Add other pickers as needed
     }
-}
-            "%.a",
-            "%.out",
-            "%.class",
-            "%.pdf",
-            "%.mkv",
-            "%.mp4",
-            "%.zip"
-        },
-    },
-    pickers = {
-        find_files = {
-            previewer = false,
-            hidden = true, -- Show hidden files
-            no_ignore = true, -- Show files ignored by .gitignore
-        },
-        current_buffer_fuzzy_find = {
-            previewer = false
-        },
-        grep_string = {
-            previewer = false
-        }
-        -- Add other pickers as needed
-    }
+
 }
 local builtin = require('telescope.builtin')
 vim.keymap.set('n', '<leader>pf', builtin.find_files, {})
