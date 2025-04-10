@@ -54,7 +54,10 @@ require('avante').setup({
 -- <leader>ac to ensure the sidebar is open, but won't close it if it's already open
 
 -- <leader>at to toggle between Avante window and main window
-vim.keymap.set("n", "<leader>pa", function()
+vim.keymap.set("n", "<C-m>", ":AvanteModels<CR>", { noremap = true, silent = true, desc = "Change Model"})
+vim.keymap.set("n", "<C-n>", ":AvanteClear<CR>", { noremap = true, silent = true, desc = "Clear Chat"})
+vim.keymap.set("n", "<leader>pa", ":AvanteToggle<CR>", { noremap = true, silent = true, desc = "Toggle Avante Sidebar"})
+--[[vim.keymap.set("n", "<leader>pa", function()
   -- Check if there's an Avante window open
   local avante_win = nil
   for _, win in ipairs(vim.api.nvim_list_wins()) do
@@ -80,7 +83,7 @@ end, { noremap = true, silent = true, desc = "Toggle Avante Chat" })
 -- <leader>am to open Avante model picker (rebinding from <leader>a?)
 vim.keymap.set("n", "<leader>am", function()
   vim.cmd("AvanteModels")
-end, { noremap = true, silent = true, desc = "Open Avante Model Picker" })
+end, { noremap = true, silent = true, desc = "Open Avante Model Picker" })]]
 
 
 vim.opt.laststatus = 3
