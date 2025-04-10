@@ -1,5 +1,5 @@
 require('avante').setup({ 
-  provider = "claude",  
+  provider = "gemini",  
   gemini = {  
     model = "gemini-2.5-pro-exp-03-25",
     temperature = 0,
