@@ -14,7 +14,7 @@ require('avante').setup({
     auto_suggestions = false,
     auto_set_highlight_group = true,
     auto_set_keymaps = true,
-    auto_apply_diff_after_generation = true,
+    auto_apply_diff_after_generation = false,
     support_paste_from_clipboard = true,
     --highlight_input_on_submit = true,
   },
