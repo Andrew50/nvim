@@ -48,6 +48,8 @@ vim.keymap.set("n", "<C-n>", ":AvanteClear<CR>", { noremap = true, silent = true
 
 vim.keymap.set("n", "<leader>pa",":AvanteFocus<CR>",{ noremap = true, silent = true, desc = "Focus Avante"})
 
+vim.keymap.set("n", "<leader>m", ":AvanteStop<CR>", { noremap = true, silent = true, desc = "Stop AI Request"})
+
 --[[
 -- Context-aware <leader>pa command
 vim.keymap.set("n", "<leader>pa", function()
