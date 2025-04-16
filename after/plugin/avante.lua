@@ -3,12 +3,12 @@ require('avante').setup({
   gemini = {  
     model = "gemini-2.5-pro-exp-03-25",
     temperature = 0,
-    max_tokens = 4096,
+    max_tokens = 30000,
   },
   anthropic = {
       model = "claude-3-7-sonnet-latest",
       temperature = 0.1,
-      max_tokens = 4096,
+      max_tokens = 12000,
   },
   behaviour = {
     auto_suggestions = false,
