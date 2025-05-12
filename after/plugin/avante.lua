@@ -1,9 +1,9 @@
 require('avante').setup({ 
   provider = "gemini",  
   gemini = {  
-    model = "gemini-2.5-pro-exp-03-25",
+    model = "gemini-2.5-pro-preview-03-25",
     temperature = 0,
-    max_tokens = 30000,
+    max_tokens = 12000,
   },
   anthropic = {
       model = "claude-3-7-sonnet-latest",
